@@ -9,6 +9,7 @@ import { fetchData } from "./generics/1";
 import { compare } from "./generics/2";
 import { merge } from "./generics/3";
 import { createOrUpdateUser } from "./generics/4";
+import { UserRole, RoleDescription } from "./generics/5";
 
 // 1.ts
 console.log(age); // 50
@@ -114,3 +115,8 @@ createOrUpdateUser({
   email: "alice@mail.com",
   password: "securePass",
 });
+
+// 5.ts
+console.log(RoleDescription[UserRole.admin]); // "Admin User"
+console.log(RoleDescription[UserRole.editor]); // "Editor User"
+console.log(RoleDescription[UserRole.guest]); // "Guest User"

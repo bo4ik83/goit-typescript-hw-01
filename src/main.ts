@@ -7,6 +7,7 @@ import { mango, poly } from "./basic/6";
 import { page1, page2 } from "./basic/7";
 import { fetchData } from "./generics/1";
 import { compare } from "./generics/2";
+import { merge } from "./generics/3";
 
 // 1.ts
 console.log(age); // 50
@@ -87,3 +88,10 @@ const obj2 = { name: "Ball", position: 2, color: "Blue", weight: 10 };
 
 const result = compare(obj1, obj2);
 console.log(result);
+
+// 3.ts
+const objA = { name: "Alice", age: 25 };
+const objB = { job: "Developer", country: "USA" };
+
+const mergedObj = merge(objA, objB);
+console.log(mergedObj);

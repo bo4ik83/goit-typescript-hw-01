@@ -10,6 +10,7 @@ import { compare } from "./generics/2";
 import { merge } from "./generics/3";
 import { createOrUpdateUser } from "./generics/4";
 import { UserRole, RoleDescription } from "./generics/5";
+import Params from "./generics/6";
 
 // 1.ts
 console.log(age); // 50
@@ -120,3 +121,13 @@ createOrUpdateUser({
 console.log(RoleDescription[UserRole.admin]); // "Admin User"
 console.log(RoleDescription[UserRole.editor]); // "Editor User"
 console.log(RoleDescription[UserRole.guest]); // "Guest User"
+
+// 6.ts
+const testParams: Params = {
+  email: "user@example.com",
+  firstName: "Alice",
+  lastName: "Smith",
+  phone: "9876543210",
+};
+
+console.log(testParams);

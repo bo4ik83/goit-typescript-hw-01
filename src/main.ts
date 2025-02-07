@@ -5,7 +5,8 @@ import { showMessage, calc, customError } from "./basic/4";
 import { DayOfWeek, isWeekend } from "./basic/5";
 import { mango, poly } from "./basic/6";
 import { page1, page2 } from "./basic/7";
-import fetchData from "./generics/1";
+import { fetchData } from "./generics/1";
+import { compare } from "./generics/2";
 
 // 1.ts
 console.log(age); // 50
@@ -79,3 +80,10 @@ async function loadUserData() {
 }
 
 loadUserData();
+
+// 2.ts
+const obj1 = { name: "Box", position: 1, color: "Red", weight: 5 };
+const obj2 = { name: "Ball", position: 2, color: "Blue", weight: 10 };
+
+const result = compare(obj1, obj2);
+console.log(result);

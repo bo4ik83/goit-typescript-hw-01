@@ -5,6 +5,7 @@ import { showMessage, calc, customError } from "./basic/4";
 import { DayOfWeek, isWeekend } from "./basic/5";
 import { mango, poly } from "./basic/6";
 import { page1, page2 } from "./basic/7";
+import fetchData from "./generics/1";
 
 // 1.ts
 console.log(age); // 50
@@ -57,3 +58,24 @@ console.log(poly); // { name: "Poly", age: 25, email: "poly@example.com" }
 // 7.ts
 console.log(page1);
 console.log(page2);
+
+// generics
+// 1.ts
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+async function loadUserData() {
+  try {
+    const user = await fetchData<User>(
+      "https://jsonplaceholder.typicode.com/users/1"
+    );
+    console.log(user);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+loadUserData();

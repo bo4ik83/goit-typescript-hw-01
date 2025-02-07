@@ -8,6 +8,7 @@ import { page1, page2 } from "./basic/7";
 import { fetchData } from "./generics/1";
 import { compare } from "./generics/2";
 import { merge } from "./generics/3";
+import { createOrUpdateUser } from "./generics/4";
 
 // 1.ts
 console.log(age); // 50
@@ -95,3 +96,21 @@ const objB = { job: "Developer", country: "USA" };
 
 const mergedObj = merge(objA, objB);
 console.log(mergedObj);
+
+// 4.ts
+// Обновление только email и пароля
+createOrUpdateUser({
+  email: "user@mail.com",
+  password: "password123",
+});
+
+// Обновление только имени
+createOrUpdateUser({ name: "Alice" });
+
+// Обновление всех данных пользователя
+createOrUpdateUser({
+  name: "Alice",
+  surname: "Johnson",
+  email: "alice@mail.com",
+  password: "securePass",
+});
